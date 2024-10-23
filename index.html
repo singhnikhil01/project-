@@ -1,25 +1,498 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Layout</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        overflow-x: hidden;
+      }
+      .header {
+        background-color: #f8b400;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 20px;
+      }
+      .footer {
+        background-color: #007bff;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        font-size: 20px;
+      }
+      .content {
+        background-color: #28a745;
+        min-height: calc(100vh - 120px); /* Adjusting for header and footer */
+        padding: 20px;
+        text-align: center;
+        overflow-yesno: auto;
+      }
+    </style>
   </head>
   <body>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="#">upgrade your browser</a> to improve your experience.
-      </p>
-    <![endif]-->
+    <div class="header">Fixed Header</div>
 
-    <script src="" async defer></script>
+    <div class="content">
+      <h1>Welcome to the Content Area</h1>
+      <p></p>
+      <p>Scroll horizontally to see more content...</p>
+
+      <p>
+        In mathematical statistics, the Kullback–Leibler (KL) divergence (also
+        called relative entropy and I-divergence[1]), denoted D KL ( P ∥ Q )
+        {\displaystyle D_{\text{KL}}(P\parallel Q)}, is a type of statistical
+        distance: a measure of how one reference probability distribution P is
+        different from a second probability distribution Q.[2][3]
+        Mathematically, it is defined as D KL ( P ∥ Q ) = ∑ x ∈ X P ( x ) log ⁡
+        ( P ( x ) Q ( x ) ) . {\displaystyle D_{\text{KL}}(P\parallel Q)=\sum
+        _{x\in {\mathcal {X}}}P(x)\ \log \left({\frac {\ P(x)\ }{Q(x)}}\right).}
+        A simple interpretation of the KL divergence of P from Q is the expected
+        excess surprise from using Q as a model instead of P when the actual
+        distribution is P. While it is a measure of how different two
+        distributions are, and in some sense is thus a "distance", it is not
+        actually a metric, which is the most familiar and formal type of
+        distance. In particular, it is not symmetric in the two distributions
+        (in contrast to variation of information), and does not satisfy the
+        triangle inequality. Instead, in terms of information geometry, it is a
+        type of divergence,[4] a generalization of squared distance, and for
+        certain classes of distributions (notably an exponential family), it
+        satisfies a generalized Pythagorean theorem (which applies to squared
+        distances).[5] Relative entropy is always a non-negative real number,
+        with value 0 if and only if the two distributions in question are
+        identical. It has diverse applications, both theoretical, such as
+        characterizing the relative (Shannon) entropy in information systems,
+        randomness in continuous time-series, and information gain when
+        comparing statistical models of inference; and practical, such as
+        applied statistics, fluid mechanics, neuroscience, bioinformatics, and
+        machine learning. Introduction and context Consider two probability
+        distributions P and Q. Usually, P represents the data, the observations,
+        or a measured probability distribution. Distribution Q represents
+        instead a theory, a model, a description or an approximation of P. The
+        Kullback–Leibler divergence D KL ( P ∥ Q ) {\displaystyle
+        D_{\text{KL}}(P\parallel Q)} is then interpreted as the average
+        difference of the number of bits required for encoding samples of P
+        using a code optimized for Q rather than one optimized for P. Note that
+        the roles of P and Q can be reversed in some situations where that is
+        easier to compute, such as with the expectation–maximization algorithm
+        (EM) and evidence lower bound (ELBO) computations. Etymology The
+        relative entropy was introduced by Solomon Kullback and Richard Leibler
+        in Kullback & Leibler (1951) as "the mean information for discrimination
+        between H 1 {\displaystyle H_{1}} and H 2 {\displaystyle H_{2}} per
+        observation from μ 1 {\displaystyle \mu _{1}}",[6] where one is
+        comparing two probability measures μ 1 , μ 2 {\displaystyle \mu _{1},\mu
+        _{2}}, and H 1 , H 2 {\displaystyle H_{1},H_{2}} are the hypotheses that
+        one is selecting from measure μ 1 , μ 2 {\displaystyle \mu _{1},\mu
+        _{2}} (respectively). They denoted this by I ( 1 : 2 ) {\displaystyle
+        I(1:2)}, and defined the "'divergence' between μ 1 {\displaystyle \mu
+        _{1}} and μ 2 {\displaystyle \mu _{2}}" as the symmetrized quantity J (
+        1 , 2 ) = I ( 1 : 2 ) + I ( 2 : 1 ) {\displaystyle
+        J(1,2)=I(1:2)+I(2:1)}, which had already been defined and used by Harold
+        Jeffreys in 1948.[7] In Kullback (1959), the symmetrized form is again
+        referred to as the "divergence", and the relative entropies in each
+        direction are referred to as a "directed divergences" between two
+        distributions;[8] Kullback preferred the term discrimination
+        information.[9] The term "divergence" is in contrast to a distance
+        (metric), since the symmetrized divergence does not satisfy the triangle
+        inequality.[10] Numerous references to earlier uses of the symmetrized
+        divergence and to other statistical distances are given in Kullback
+        (1959, pp. 6–7, §1.3 Divergence). The asymmetric "directed divergence"
+        has come to be known as the Kullback–Leibler divergence, while the
+        symmetrized "divergence" is now referred to as the Jeffreys divergence.
+        Definition For discrete probability distributions P and Q defined on the
+        same sample space, X , {\displaystyle \ {\mathcal {X}}\ ,} the relative
+        entropy from Q to P is defined[11] to be D KL ( P ∥ Q ) = ∑ x ∈ X P ( x
+        ) log ⁡ ( P ( x ) Q ( x ) ) , {\displaystyle D_{\text{KL}}(P\parallel
+        Q)=\sum _{x\in {\mathcal {X}}}P(x)\ \log \left({\frac {\ P(x)\
+        }{Q(x)}}\right)\ ,} which is equivalent to D KL ( P ∥ Q ) = − ∑ x ∈ X P
+        ( x ) log ⁡ ( Q ( x ) P ( x ) ) . {\displaystyle
+        D_{\text{KL}}(P\parallel Q)=-\sum _{x\in {\mathcal {X}}}P(x)\ \log
+        \left({\frac {\ Q(x)\ }{P(x)}}\right)~.} In other words, it is the
+        expectation of the logarithmic difference between the probabilities P
+        and Q, where the expectation is taken using the probabilities P.
+        Relative entropy is only defined in this way if, for all x, Q ( x ) = 0
+        {\displaystyle \ Q(x)=0\ } implies P ( x ) = 0 {\displaystyle \ P(x)=0\
+        } (absolute continuity). Otherwise, it is often defined as +
+        ∞{\displaystyle +\infty },[1] but the value + ∞ {\displaystyle \ +\infty
+        \ } is possible even if Q ( x ) ≠ 0 {\displaystyle \ Q(x)\neq 0\ }
+        everywhere,[12][13] provided that X {\displaystyle \ {\mathcal {X}}\ }
+        is infinite in extent. Analogous comments apply to the continuous and
+        general measure cases defined below. Whenever P ( x ) {\displaystyle \
+        P(x)\ } is zero the contribution of the corresponding term is
+        interpreted as zero because lim x → 0 + x log ⁡ ( x ) = 0 .
+        {\displaystyle \lim _{x\to 0^{+}}x\log(x)=0~.} For distributions P and Q
+        of a continuous random variable, relative entropy is defined to be the
+        integral[14] D KL ( P ∥ Q ) = ∫ − ∞ ∞ p ( x ) log ⁡ ( p ( x ) q ( x ) )
+        d x , {\displaystyle D_{\text{KL}}(P\parallel Q)=\int _{-\infty
+        }^{\infty }p(x)\ \log \left({\frac {p(x)}{q(x)}}\right)\ \mathrm {d} \
+        \!x\ ,} where p and q denote the probability densities of P and Q. More
+        generally, if P and Q are probability measures on a measurable space X ,
+        {\displaystyle \ {\mathcal {X}}\ ,} and P is absolutely continuous with
+        respect to Q, then the relative entropy from Q to P is defined as D KL (
+        P ∥ Q ) = ∫ x ∈ X log ⁡ ( P ( d x ) Q ( d x ) ) P ( d x ) ,
+        {\displaystyle D_{\text{KL}}(P\parallel Q)=\int _{x\in {\mathcal {X}}}\
+        \log \left({\frac {P(\mathrm {d} \ \!x)}{Q(\mathrm {d} \ \!x)}}\right)\
+        P(\mathrm {d} \ \!x)\ ,} where P ( d x ) Q ( d x ) {\displaystyle \
+        {\frac {\ P(\mathrm {d} \ \!x)\ }{Q(\mathrm {d} \ \!x)\ }}} is the
+        Radon–Nikodym derivative of P with respect to Q, i.e. the unique Q
+        almost everywhere defined function r on X {\displaystyle \ {\mathcal
+        {X}}\ } such that P ( d x ) = r ( x ) Q ( d x ) {\displaystyle \
+        P(\mathrm {d} \ \!x)=r(x)Q(\mathrm {d} \ \!x)\ } which exists because P
+        is absolutely continuous with respect to Q. Also we assume the
+        expression on the right-hand side exists. Equivalently (by the chain
+        rule), this can be written as D KL ( P ∥ Q ) = ∫ x ∈ X P ( d x ) Q ( d x
+        ) log ⁡ ( P ( d x ) Q ( d x ) ) Q ( d x ) , {\displaystyle
+        D_{\text{KL}}(P\parallel Q)=\int _{x\in {\mathcal {X}}}{\frac {P(\mathrm
+        {d} \ \!x)}{Q(\mathrm {d} \ \!x)}}\ \log \left({\frac {P(\mathrm {d} \
+        \!x)}{Q(\mathrm {d} \ \!x)}}\right)\ Q(\mathrm {d} \ \!x)\ ,} which is
+        the entropy of P relative to Q. Continuing in this case, if
+        μ{\displaystyle \mu } is any measure on X {\displaystyle {\mathcal {X}}}
+        for which densities p and q with P ( d x ) = p ( x ) μ ( d x )
+        {\displaystyle \ P(\mathrm {d} \ \!x)=p(x)\mu (\mathrm {d} \ \!x)\ } and
+        Q ( d x ) = q ( x ) μ ( d x ) {\displaystyle \ Q(\mathrm {d} \
+        \!x)=q(x)\mu (\mathrm {d} \ \!x)\ } exist (meaning that P and Q are both
+        absolutely continuous with respect to μ {\displaystyle \ \mu \ }), then
+        the relative entropy from Q to P is given as D KL ( P ∥ Q ) = ∫ x ∈ X p
+        ( x ) log ⁡ ( p ( x ) q ( x ) ) μ ( d x ) . {\displaystyle
+        D_{\text{KL}}(P\parallel Q)=\int _{x\in {\mathcal {X}}}p(x)\ \log
+        \left({\frac {\ p(x)\ }{q(x)}}\right)\ \mu (\mathrm {d} \ \!x)~.} Note
+        that such a measure μ{\displaystyle \mu } for which densities can be
+        defined always exists, since one can take μ = 1 2 ( P + Q )
+        {\displaystyle \ \mu ={\frac {1}{2}}\left(P+Q\right)\ } although in
+        practice it will usually be one that in the context like counting
+        measure for discrete distributions, or Lebesgue measure or a convenient
+        variant thereof like Gaussian measure or the uniform measure on the
+        sphere, Haar measure on a Lie group etc. for continuous distributions.
+        The logarithms in these formulae are usually taken to base 2 if
+        information is measured in units of bits, or to base e if information is
+        measured in nats. Most formulas involving relative entropy hold
+        regardless of the base of the logarithm. Various conventions exist for
+        referring to D KL ( P ∥ Q ) {\displaystyle \ D_{\text{KL}}(P\parallel
+        Q)\ } in words. Often it is referred to as the divergence between P and
+        Q, but this fails to convey the fundamental asymmetry in the relation.
+        Sometimes, as in this article, it may be described as the divergence of
+        P from Q or as the divergence from Q to P. This reflects the asymmetry
+        in Bayesian inference, which starts from a prior Q and updates to the
+        posterior P. Another common way to refer to D KL ( P ∥ Q )
+        {\displaystyle \ D_{\text{KL}}(P\parallel Q)\ } is as the relative
+        entropy of P with respect to Q or the information gain from P over Q.
+        Basic example Kullback[3] gives the following example (Table 2.1,
+        Example 2.1). Let P and Q be the distributions shown in the table and
+        figure. P is the distribution on the left side of the figure, a binomial
+        distribution with N = 2 {\displaystyle N=2} and p = 0.4 {\displaystyle
+        p=0.4}. Q is the distribution on the right side of the figure, a
+        discrete uniform distribution with the three possible outcomes x =
+        {\displaystyle x=} 0, 1, 2 (i.e. X = { 0 , 1 , 2 } {\displaystyle
+        {\mathcal {X}}=\{0,1,2\}}), each with probability p = 1 / 3
+        {\displaystyle p=1/3}. Two distributions to illustrate relative entropy
+        x 0 1 2 Distribution P ( x ) {\displaystyle P(x)} 9 25 {\displaystyle
+        {\frac {9}{25}}} 12 25 {\displaystyle {\frac {12}{25}}} 4 25
+        {\displaystyle {\frac {4}{25}}} Distribution Q ( x ) {\displaystyle
+        Q(x)} 1 3 {\displaystyle {\frac {1}{3}}} 1 3 {\displaystyle {\frac
+        {1}{3}}} 1 3 {\displaystyle {\frac {1}{3}}} Relative entropies D KL ( P
+        ∥ Q ) {\displaystyle D_{\text{KL}}(P\parallel Q)} and D KL ( Q ∥ P )
+        {\displaystyle D_{\text{KL}}(Q\parallel P)} are calculated as follows.
+        This example uses the natural log with base e, designated ln to get
+        results in nats (see units of information): D KL ( P ∥ Q ) = ∑ x ∈ X P (
+        x ) ln ⁡ ( P ( x ) Q ( x ) ) = 9 25 ln ⁡ ( 9 / 25 1 / 3 ) + 12 25 ln ⁡ (
+        12 / 25 1 / 3 ) + 4 25 ln ⁡ ( 4 / 25 1 / 3 ) = 1 25 ( 32 ln ⁡ ( 2 ) + 55
+        ln ⁡ ( 3 ) − 50 ln ⁡ ( 5 ) ) ≈ 0.0852996 , {\displaystyle
+        {\begin{aligned}D_{\text{KL}}(P\parallel Q)&=\sum _{x\in {\mathcal
+        {X}}}P(x)\ln \left({\frac {P(x)}{Q(x)}}\right)\\&={\frac {9}{25}}\ln
+        \left({\frac {9/25}{1/3}}\right)+{\frac {12}{25}}\ln \left({\frac
+        {12/25}{1/3}}\right)+{\frac {4}{25}}\ln \left({\frac
+        {4/25}{1/3}}\right)\\&={\frac
+        {1}{25}}\left(32\ln(2)+55\ln(3)-50\ln(5)\right)\approx
+        0.0852996,\end{aligned}}} D KL ( Q ∥ P ) = ∑ x ∈ X Q ( x ) ln ⁡ ( Q ( x
+        ) P ( x ) ) = 1 3 ln ⁡ ( 1 / 3 9 / 25 ) + 1 3 ln ⁡ ( 1 / 3 12 / 25 ) + 1
+        3 ln ⁡ ( 1 / 3 4 / 25 ) = 1 3 ( − 4 ln ⁡ ( 2 ) − 6 ln ⁡ ( 3 ) + 6 ln ⁡ (
+        5 ) ) ≈ 0.097455. {\displaystyle
+        {\begin{aligned}D_{\text{KL}}(Q\parallel P)&=\sum _{x\in {\mathcal
+        {X}}}Q(x)\ln \left({\frac {Q(x)}{P(x)}}\right)\\&={\frac {1}{3}}\ln
+        \left({\frac {1/3}{9/25}}\right)+{\frac {1}{3}}\ln \left({\frac
+        {1/3}{12/25}}\right)+{\frac {1}{3}}\ln \left({\frac
+        {1/3}{4/25}}\right)\\&={\frac
+        {1}{3}}\left(-4\ln(2)-6\ln(3)+6\ln(5)\right)\approx
+        0.097455.\end{aligned}}} Interpretations Statistics In the field of
+        statistics, the Neyman–Pearson lemma states that the most powerful way
+        to distinguish between the two distributions P and Q based on an
+        observation Y (drawn from one of them) is through the log of the ratio
+        of their likelihoods: log ⁡ P ( Y ) − log ⁡ Q ( Y ) {\displaystyle \log
+        P(Y)-\log Q(Y)}. The KL divergence is the expected value of this
+        statistic if Y is actually drawn from P. Kullback motivated the
+        statistic as an expected log likelihood ratio.[15] Coding In the context
+        of coding theory, D KL ( P ∥ Q ) {\displaystyle D_{\text{KL}}(P\parallel
+        Q)} can be constructed by measuring the expected number of extra bits
+        required to code samples from P using a code optimized for Q rather than
+        the code optimized for P. Inference In the context of machine learning,
+        D KL ( P ∥ Q ) {\displaystyle D_{\text{KL}}(P\parallel Q)} is often
+        called the information gain achieved if P would be used instead of Q
+        which is currently used. By analogy with information theory, it is
+        called the relative entropy of P with respect to Q. Expressed in the
+        language of Bayesian inference, D KL ( P ∥ Q ) {\displaystyle
+        D_{\text{KL}}(P\parallel Q)} is a measure of the information gained by
+        revising one's beliefs from the prior probability distribution Q to the
+        posterior probability distribution P. In other words, it is the amount
+        of information lost when Q is used to approximate P.[16] Information
+        geometry In applications, P typically represents the "true" distribution
+        of data, observations, or a precisely calculated theoretical
+        distribution, while Q typically represents a theory, model, description,
+        or approximation of P. In order to find a distribution Q that is closest
+        to P, we can minimize the KL divergence and compute an information
+        projection. While it is a statistical distance, it is not a metric, the
+        most familiar type of distance, but instead it is a divergence.[4] While
+        metrics are symmetric and generalize linear distance, satisfying the
+        triangle inequality, divergences are asymmetric and generalize squared
+        distance, in some cases satisfying a generalized Pythagorean theorem. In
+        general D KL ( P ∥ Q ) {\displaystyle D_{\text{KL}}(P\parallel Q)} does
+        not equal D KL ( Q ∥ P ) {\displaystyle D_{\text{KL}}(Q\parallel P)},
+        and the asymmetry is an important part of the geometry.[4] The
+        infinitesimal form of relative entropy, specifically its Hessian, gives
+        a metric tensor that equals the Fisher information metric; see § Fisher
+        information metric. Relative entropy satisfies a generalized Pythagorean
+        theorem for exponential families (geometrically interpreted as dually
+        flat manifolds), and this allows one to minimize relative entropy by
+        geometric means, for example by information projection and in maximum
+        likelihood estimation.[5] The relative entropy is the Bregman divergence
+        generated by the negative entropy, but it is also of the form of an
+        f-divergence. For probabilities over a finite alphabet, it is unique in
+        being a member of both of these classes of statistical divergences.
+        Finance (game theory) Consider a growth-optimizing investor in a fair
+        game with mutually exclusive outcomes (e.g. a “horse race” in which the
+        official odds add up to one). The rate of return expected by such an
+        investor is equal to the relative entropy between the investor's
+        believed probabilities and the official odds.[17] This is a special case
+        of a much more general connection between financial returns and
+        divergence measures.[18] Financial risks are connected to D KL
+        {\displaystyle D_{\text{KL}}} via information geometry.[19] Investors'
+        views, the prevailing market view, and risky scenarios form triangles on
+        the relevant manifold of probability distributions. The shape of the
+        triangles determines key financial risks (both qualitatively and
+        quantitatively). For instance, obtuse triangles in which investors'
+        views and risk scenarios appear on “opposite sides” relative to the
+        market describe negative risks, acute triangles describe positive
+        exposure, and the right-angled situation in the middle corresponds to
+        zero risk. Motivation Illustration of the relative entropy for two
+        normal distributions. The typical asymmetry is clearly visible. In
+        information theory, the Kraft–McMillan theorem establishes that any
+        directly decodable coding scheme for coding a message to identify one
+        value x i {\displaystyle x_{i}} out of a set of possibilities X can be
+        seen as representing an implicit probability distribution q ( x i ) = 2
+        − ℓ i {\displaystyle q(x_{i})=2^{-\ell _{i}}} over X, where ℓ i
+        {\displaystyle \ell _{i}} is the length of the code for x i
+        {\displaystyle x_{i}} in bits. Therefore, relative entropy can be
+        interpreted as the expected extra message-length per datum that must be
+        communicated if a code that is optimal for a given (wrong) distribution
+        Q is used, compared to using a code based on the true distribution P: it
+        is the excess entropy. D KL ( P ∥ Q ) = ∑ x ∈ X p ( x ) log ⁡ 1 q ( x )
+        − ∑ x ∈ X p ( x ) log ⁡ 1 p ( x ) = H ( P , Q ) − H ( P ) {\displaystyle
+        {\begin{aligned}D_{\text{KL}}(P\parallel Q)&=\sum _{x\in {\mathcal
+        {X}}}p(x)\log {\frac {1}{q(x)}}-\sum _{x\in {\mathcal {X}}}p(x)\log
+        {\frac {1}{p(x)}}\\[5pt]&=\mathrm {H} (P,Q)-\mathrm {H}
+        (P)\end{aligned}}} where H ( P , Q ) {\displaystyle \mathrm {H} (P,Q)}
+        is the cross entropy of Q relative to P and H ( P ) {\displaystyle
+        \mathrm {H} (P)} is the entropy of P (which is the same as the
+        cross-entropy of P with itself). The relative entropy D KL ( P ∥ Q )
+        {\displaystyle D_{\text{KL}}(P\parallel Q)} can be thought of
+        geometrically as a statistical distance, a measure of how far the
+        distribution Q is from the distribution P. Geometrically it is a
+        divergence: an asymmetric, generalized form of squared distance. The
+        cross-entropy H ( P , Q ) {\displaystyle H(P,Q)} is itself such a
+        measurement (formally a loss function), but it cannot be thought of as a
+        distance, since H ( P , P ) =: H ( P ) {\displaystyle H(P,P)=:H(P)} is
+        not zero. This can be fixed by subtracting H ( P ) {\displaystyle H(P)}
+        to make D KL ( P ∥ Q ) {\displaystyle D_{\text{KL}}(P\parallel Q)} agree
+        more closely with our notion of distance, as the excess loss. The
+        resulting function is asymmetric, and while this can be symmetrized (see
+        § Symmetrised divergence), the asymmetric form is more useful. See §
+        Interpretations for more on the geometric interpretation. Relative
+        entropy relates to "rate function" in the theory of large
+        deviations.[20][21] Arthur Hobson proved that relative entropy is the
+        only measure of difference between probability distributions that
+        satisfies some desired properties, which are the canonical extension to
+        those appearing in a commonly used characterization of entropy.[22]
+        Consequently, mutual information is the only measure of mutual
+        dependence that obeys certain related conditions, since it can be
+        defined in terms of Kullback–Leibler divergence. Properties Relative
+        entropy is always non-negative, D KL ( P ∥ Q ) ≥ 0 , {\displaystyle
+        D_{\text{KL}}(P\parallel Q)\geq 0,}a result known as Gibbs' inequality,
+        with D KL ( P ∥ Q ) {\displaystyle D_{\text{KL}}(P\parallel Q)} equals
+        zero if and only if P = Q {\displaystyle P=Q} as measures. In
+        particular, if P ( d x ) = p ( x ) μ ( d x ) {\displaystyle
+        P(dx)=p(x)\mu (dx)} and Q ( d x ) = q ( x ) μ ( d x ) {\displaystyle
+        Q(dx)=q(x)\mu (dx)}, then p ( x ) = q ( x ) {\displaystyle p(x)=q(x)}
+        μ{\displaystyle \mu }-almost everywhere. The entropy H ( P )
+        {\displaystyle \mathrm {H} (P)} thus sets a minimum value for the
+        cross-entropy H ( P , Q ) {\displaystyle \mathrm {H} (P,Q)}, the
+        expected number of bits required when using a code based on Q rather
+        than P; and the Kullback–Leibler divergence therefore represents the
+        expected number of extra bits that must be transmitted to identify a
+        value x drawn from X, if a code is used corresponding to the probability
+        distribution Q, rather than the "true" distribution P. No upper-bound
+        exists for the general case. However, it is shown that if P and Q are
+        two discrete probability distributions built by distributing the same
+        discrete quantity, then the maximum value of D KL ( P ∥ Q )
+        {\displaystyle D_{\text{KL}}(P\parallel Q)} can be calculated.[23]
+        Relative entropy remains well-defined for continuous distributions, and
+        furthermore is invariant under parameter transformations. For example,
+        if a transformation is made from variable x to variable y ( x )
+        {\displaystyle y(x)}, then, since P ( d x ) = p ( x ) d x = p ~ ( y ) d
+        y = p ~ ( y ( x ) ) | d y d x ( x ) | d x {\displaystyle
+        P(dx)=p(x)\,dx={\tilde {p}}(y)\,dy={\tilde {p}}(y(x))|{\tfrac
+        {dy}{dx}}(x)|\,dx} and Q ( d x ) = q ( x ) d x = q ~ ( y ) d y = q ~ ( y
+        ) | d y d x ( x ) | d x {\displaystyle Q(dx)=q(x)\,dx={\tilde
+        {q}}(y)\,dy={\tilde {q}}(y)|{\tfrac {dy}{dx}}(x)|dx} where | d y d x ( x
+        ) | {\displaystyle |{\tfrac {dy}{dx}}(x)|} is the absolute value of the
+        derivative or more generally of the Jacobian, the relative entropy may
+        be rewritten: D KL ( P ∥ Q ) = ∫ x a x b p ( x ) log ⁡ ( p ( x ) q ( x )
+        ) d x = ∫ x a x b p ~ ( y ( x ) ) | d y d x ( x ) | log ⁡ ( p ~ ( y ( x
+        ) ) | d y d x ( x ) | q ~ ( y ( x ) ) | d y d x ( x ) | ) d x = ∫ y a y
+        b p ~ ( y ) log ⁡ ( p ~ ( y ) q ~ ( y ) ) d y {\displaystyle
+        {\begin{aligned}D_{\text{KL}}(P\parallel Q)&=\int
+        _{x_{a}}^{x_{b}}p(x)\log \left({\frac
+        {p(x)}{q(x)}}\right)\,dx\\[6pt]&=\int _{x_{a}}^{x_{b}}{\tilde
+        {p}}(y(x))|{\frac {dy}{dx}}(x)|\log \left({\frac {{\tilde
+        {p}}(y(x))\,|{\frac {dy}{dx}}(x)|}{{\tilde {q}}(y(x))\,|{\frac
+        {dy}{dx}}(x)|}}\right)\,dx\\&=\int _{y_{a}}^{y_{b}}{\tilde {p}}(y)\log
+        \left({\frac {{\tilde {p}}(y)}{{\tilde
+        {q}}(y)}}\right)\,dy\end{aligned}}}where y a = y ( x a ) {\displaystyle
+        y_{a}=y(x_{a})} and y b = y ( x b ) {\displaystyle y_{b}=y(x_{b})}.
+        Although it was assumed that the transformation was continuous, this
+        need not be the case. This also shows that the relative entropy produces
+        a dimensionally consistent quantity, since if x is a dimensioned
+        variable, p ( x ) {\displaystyle p(x)} and q ( x ) {\displaystyle q(x)}
+        are also dimensioned, since e.g. P ( d x ) = p ( x ) d x {\displaystyle
+        P(dx)=p(x)\,dx} is dimensionless. The argument of the logarithmic term
+        is and remains dimensionless, as it must. It can therefore be seen as in
+        some ways a more fundamental quantity than some other properties in
+        information theory[24] (such as self-information or Shannon entropy),
+        which can become undefined or negative for non-discrete probabilities.
+        Relative entropy is additive for independent distributions in much the
+        same way as Shannon entropy. If P 1 , P 2 {\displaystyle P_{1},P_{2}}
+        are independent distributions, and P ( d x , d y ) = P 1 ( d x ) P 2 ( d
+        y ) {\displaystyle P(dx,dy)=P_{1}(dx)P_{2}(dy)}, and likewise Q ( d x ,
+        d y ) = Q 1 ( d x ) Q 2 ( d y ) {\displaystyle
+        Q(dx,dy)=Q_{1}(dx)Q_{2}(dy)} for independent distributions Q 1 , Q 2
+        {\displaystyle Q_{1},Q_{2}} then D KL ( P ∥ Q ) = D KL ( P 1 ∥ Q 1 ) + D
+        KL ( P 2 ∥ Q 2 ) . {\displaystyle D_{\text{KL}}(P\parallel
+        Q)=D_{\text{KL}}(P_{1}\parallel Q_{1})+D_{\text{KL}}(P_{2}\parallel
+        Q_{2}).} Relative entropy D KL ( P ∥ Q ) {\displaystyle
+        D_{\text{KL}}(P\parallel Q)} is convex in the pair of probability
+        measures ( P , Q ) {\displaystyle (P,Q)}, i.e. if ( P 1 , Q 1 )
+        {\displaystyle (P_{1},Q_{1})} and ( P 2 , Q 2 ) {\displaystyle
+        (P_{2},Q_{2})} are two pairs of probability measures then D KL ( λ P 1 +
+        ( 1 − λ ) P 2 ∥ λ Q 1 + ( 1 − λ ) Q 2 ) ≤ λ D KL ( P 1 ∥ Q 1 ) + ( 1 − λ
+        ) D KL ( P 2 ∥ Q 2 ) for 0 ≤ λ ≤ 1. {\displaystyle D_{\text{KL}}(\lambda
+        P_{1}+(1-\lambda )P_{2}\parallel \lambda Q_{1}+(1-\lambda )Q_{2})\leq
+        \lambda D_{\text{KL}}(P_{1}\parallel Q_{1})+(1-\lambda
+        )D_{\text{KL}}(P_{2}\parallel Q_{2}){\text{ for }}0\leq \lambda \leq 1.}
+        D KL ( P ∥ Q ) {\displaystyle D_{\text{KL}}(P\parallel Q)} may be Taylor
+        expanded about its minimum (i.e. P = Q {\displaystyle P=Q}) as D KL ( P
+        ∥ Q ) = ∑ n = 2 ∞ 1 n ( n − 1 ) ∑ x ∈ X ( Q ( x ) − P ( x ) ) n Q ( x )
+        n − 1 {\displaystyle D_{\text{KL}}(P\parallel Q)=\sum _{n=2}^{\infty
+        }{\frac {1}{n(n-1)}}\sum _{x\in {\mathcal {X}}}{\frac
+        {(Q(x)-P(x))^{n}}{Q(x)^{n-1}}}}which converges if and only if P ≤ 2 Q
+        {\displaystyle P\leq 2Q} almost surely w.r.t Q {\displaystyle Q}.
+        [Proof] Duality formula for variational inference The following result,
+        due to Donsker and Varadhan,[25] is known as Donsker and Varadhan's
+        variational formula. Theorem [Duality Formula for Variational Inference]
+        — Let Θ{\displaystyle \Theta } be a set endowed with an appropriate
+        σ{\displaystyle \sigma }-field F {\displaystyle {\mathcal {F}}}, and two
+        probability measures P and Q, which formulate two probability spaces ( Θ
+        , F , P ) {\displaystyle (\Theta ,{\mathcal {F}},P)} and ( Θ , F , Q )
+        {\displaystyle (\Theta ,{\mathcal {F}},Q)}, with Q ≪ P {\displaystyle
+        Q\ll P}. ( Q ≪ P {\displaystyle Q\ll P} indicates that Q is absolutely
+        continuous with respect to P.) Let h be a real-valued integrable random
+        variable on ( Θ , F , P ) {\displaystyle (\Theta ,{\mathcal {F}},P)}.
+        Then the following equality holds log ⁡ E P [ exp ⁡ h ] = sup Q ≪ P { E
+        Q [ h ] − D KL ( Q ∥ P ) } . {\displaystyle \log E_{P}[\exp
+        h]={\text{sup}}_{Q\ll P}\{E_{Q}[h]-D_{\text{KL}}(Q\parallel P)\}.}
+        Further, the supremum on the right-hand side is attained if and only if
+        it holds Q ( d θ ) P ( d θ ) = exp ⁡ h ( θ ) E P [ exp ⁡ h ] ,
+        {\displaystyle {\frac {Q(d\theta )}{P(d\theta )}}={\frac {\exp h(\theta
+        )}{E_{P}[\exp h]}},} almost surely with respect to probability measure
+        P, where Q ( d θ ) P ( d θ ) {\displaystyle {\frac {Q(d\theta
+        )}{P(d\theta )}}} denotes the Radon-Nikodym derivative of Q with respect
+        to P . Proof For a short proof assuming integrability of exp ⁡ ( h )
+        {\displaystyle \exp(h)} with respect to P, let Q ∗{\displaystyle Q^{*}}
+        have P-density exp ⁡ h ( θ ) E P [ exp ⁡ h ] {\displaystyle {\frac {\exp
+        h(\theta )}{E_{P}[\exp h]}}}, i.e. Q ∗ ( d θ ) = exp ⁡ h ( θ ) E P [ exp
+        ⁡ h ] P ( d θ ) {\displaystyle Q^{*}(d\theta )={\frac {\exp h(\theta
+        )}{E_{P}[\exp h]}}P(d\theta )} Then D KL ( Q ∥ Q ∗ ) − D KL ( Q ∥ P ) =
+        − E Q [ h ] + log ⁡ E P [ exp ⁡ h ] . {\displaystyle
+        D_{\text{KL}}(Q\parallel Q^{*})-D_{\text{KL}}(Q\parallel
+        P)=-E_{Q}[h]+\log E_{P}[\exp h].} Therefore, E Q [ h ] − D KL ( Q ∥ P )
+        = log ⁡ E P [ exp ⁡ h ] − D KL ( Q ∥ Q ∗ ) ≤ log ⁡ E P [ exp ⁡ h ] ,
+        {\displaystyle E_{Q}[h]-D_{\text{KL}}(Q\parallel P)=\log E_{P}[\exp
+        h]-D_{\text{KL}}(Q\parallel Q^{*})\leq \log E_{P}[\exp h],} where the
+        last inequality follows from D KL ( Q ∥ Q ∗ ) ≥ 0 {\displaystyle
+        D_{\text{KL}}(Q\parallel Q^{*})\geq 0}, for which equality occurs if and
+        only if Q = Q ∗{\displaystyle Q=Q^{*}}. The conclusion follows. For
+        alternative proof using measure theory, see.[26] Examples Multivariate
+        normal distributions Suppose that we have two multivariate normal
+        distributions, with means μ 0 , μ 1 {\displaystyle \mu _{0},\mu _{1}}
+        and with (non-singular) covariance matrices Σ 0 , Σ 1 . {\displaystyle
+        \Sigma _{0},\Sigma _{1}.} If the two distributions have the same
+        dimension, k, then the relative entropy between the distributions is as
+        follows:[27] D KL ( N 0 ∥ N 1 ) = 1 2 ( tr ⁡ ( Σ 1 − 1 Σ 0 ) − k + ( μ 1
+        − μ 0 ) T Σ 1 − 1 ( μ 1 − μ 0 ) + ln ⁡ ( det Σ 1 det Σ 0 ) ) .
+        {\displaystyle D_{\text{KL}}\left({\mathcal {N}}_{0}\parallel {\mathcal
+        {N}}_{1}\right)={\frac {1}{2}}\left(\operatorname {tr} \left(\Sigma
+        _{1}^{-1}\Sigma _{0}\right)-k+\left(\mu _{1}-\mu _{0}\right)^{\mathsf
+        {T}}\Sigma _{1}^{-1}\left(\mu _{1}-\mu _{0}\right)+\ln \left({\frac
+        {\det \Sigma _{1}}{\det \Sigma _{0}}}\right)\right).} The logarithm in
+        the last term must be taken to base e since all terms apart from the
+        last are base-e logarithms of expressions that are either factors of the
+        density function or otherwise arise naturally. The equation therefore
+        gives a result measured in nats. Dividing the entire expression above by
+        ln ⁡ ( 2 ) {\displaystyle \ln(2)} yields the divergence in bits. In a
+        numerical implementation, it is helpful to express the result in terms
+        of the Cholesky decompositions L 0 , L 1 {\displaystyle L_{0},L_{1}}
+        such that Σ 0 = L 0 L 0 T {\displaystyle \Sigma _{0}=L_{0}L_{0}^{T}} and
+        Σ 1 = L 1 L 1 T {\displaystyle \Sigma _{1}=L_{1}L_{1}^{T}}. Then with M
+        and y solutions to the triangular linear systems L 1 M = L 0
+        {\displaystyle L_{1}M=L_{0}}, and L 1 y = μ 1 − μ 0 {\displaystyle
+        L_{1}y=\mu _{1}-\mu _{0}}, D KL ( N 0 ∥ N 1 ) = 1 2 ( ∑ i , j = 1 k ( M
+        i j ) 2 − k + | y | 2 + 2 ∑ i = 1 k ln ⁡ ( L 1 ) i i ( L 0 ) i i ) .
+        {\displaystyle D_{\text{KL}}\left({\mathcal {N}}_{0}\parallel {\mathcal
+        {N}}_{1}\right)={\frac {1}{2}}\left(\sum
+        _{i,j=1}^{k}(M_{ij})^{2}-k+|y|^{2}+2\sum _{i=1}^{k}\ln {\frac
+        {(L_{1})_{ii}}{(L_{0})_{ii}}}\right).} A special case, and a common
+        quantity in variational inference, is the relative entropy between a
+        diagonal multivariate normal, and a standard normal distribution (with
+        zero mean and unit variance): D KL ( N ( ( μ 1 , … , μ k ) T , diag ⁡ (
+        σ 1 2 , … , σ k 2 ) ) ∥ N ( 0 , I ) ) = 1 2 ∑ i = 1 k ( σ i 2 + μ i 2 −
+        1 − ln ⁡ ( σ i 2 ) ) . {\displaystyle D_{\text{KL}}\left({\mathcal
+        {N}}\left(\left(\mu _{1},\ldots ,\mu _{k}\right)^{\mathsf
+        {T}},\operatorname {diag} \left(\sigma _{1}^{2},\ldots ,\sigma
+        _{k}^{2}\right)\right)\parallel {\mathcal {N}}\left(\mathbf {0} ,\mathbf
+        {I} \right)\right)={1 \over 2}\sum _{i=1}^{k}\left(\sigma _{i}^{2}+\mu
+        _{i}^{2}-1-\ln \left(\sigma _{i}^{2}\right)\right).} For two univariate
+        normal distributions p and q the above simplifies to[28] D KL ( p ∥ q )
+        = log ⁡ σ 1 σ 0 + σ 0 2 + ( μ 0 − μ 1 ) 2 2 σ 1 2 − 1 2 {\displaystyle
+        D_{\text{KL}}\left({\mathcal {p}}\parallel {\mathcal {q}}\right)=\log
+        {\frac {\sigma _{1}}{\sigma _{0}}}+{\frac {\sigma _{0}^{2}+(\mu _{0}-\mu
+        _{1})^{2}}{2\sigma _{1}^{2}}}-{\frac {1}{2}}} In the case of co-centered
+        normal distributions with k = σ 1 / σ 0 {\displaystyle k=\sigma
+        _{1}/\sigma _{0}}, this simplifies[29] to: D KL ( p ∥ q ) = log 2 ⁡ k +
+        ( k − 2 − 1 ) / 2 / ln ⁡ ( 2 ) b i t s
+      </p>
+    </div>
+
+    <div class="footer">Fixed Footer</div>
   </body>
 </html>
