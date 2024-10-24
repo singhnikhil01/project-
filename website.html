@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Product Shop</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .content {
+        flex: 1;
+      }
+
+      .navbar-brand {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      .search-bar {
+        width: 300px;
+      }
+
+      .card {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      .card-title {
+        font-size: 1.25rem;
+        color: #343a40;
+      }
+
+      .card-text {
+        font-size: 1rem;
+        color: #495057;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+
+      .footer {
+        background-color: #343a40;
+        color: #fff;
+        padding: 20px 0;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">My Shop</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2 search-bar"
+              type="search"
+              placeholder="Search products..."
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-primary" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Product Section with Carousel -->
+    <div class="container mt-5 content">
+      <div class="row text-center mb-4">
+        <h2>Our Products</h2>
+      </div>
+
+      <!-- Carousel -->
+      <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <!-- Product 1 -->
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300"
+                    class="card-img-top"
+                    alt="Product 1"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Product 1</h5>
+                    <p class="card-text">₹799.00</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 2 -->
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300"
+                    class="card-img-top"
+                    alt="Product 2"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Product 2</h5>
+                    <p class="card-text">₹1,199.00</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 3 -->
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300"
+                    class="card-img-top"
+                    alt="Product 3"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Product 3</h5>
+                    <p class="card-text">₹1,499.00</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Item 2 -->
+          <div class="carousel-item">
+            <div class="row">
+              <!-- Product 4 -->
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300"
+                    class="card-img-top"
+                    alt="Product 4"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Product 4</h5>
+                    <p class="card-text">₹899.00</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 5 -->
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300"
+                    class="card-img-top"
+                    alt="Product 5"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Product 5</h5>
+                    <p class="card-text">₹1,299.00</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 6 -->
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300"
+                    class="card-img-top"
+                    alt="Product 6"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Product 6</h5>
+                    <p class="card-text">₹1,599.00</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Item 3 -->
+          <div class="carousel-item">
+            <div class="row">
+              <!-- Product 7 -->
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300"
+                    class="card-img-top"
+                    alt="Product 7"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Product 7</h5>
+                    <p class="card-text">₹999.00</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 8 -->
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300"
+                    class="card-img-top"
+                    alt="Product 8"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Product 8</h5>
+                    <p class="card-text">₹1,399.00</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Product 9 -->
+              <div class="col-md-4">
+                <div class="card">
+                  <img
+                    src="https://via.placeholder.com/300"
+                    class="card-img-top"
+                    alt="Product 9"
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Product 9</h5>
+                    <p class="card-text">₹1,699.00</p>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#productCarousel"
+          data-bs-slide="prev"
+        >
+          <span
+            class="carousel-control-prev-icon text-dark"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#productCarousel"
+          data-bs-slide="next"
+        >
+          <span
+            class="carousel-control-next-icon text-dark"
+            aria-hidden="true"
+          ></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3">
+      <div class="container text-center">
+        <p>&copy; 2024 My Shop. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
